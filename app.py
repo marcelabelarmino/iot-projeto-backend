@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app, resources={
     r"/api/*": {
         "origins": [
-            "http://localhost:3000",  # Local development
+            "https://agrigrowthiot.netlify.app",  # Local development
             "http://localhost:5173",  # Vite development
             "http://localhost:8000",  # Alternative local
             os.getenv("FRONTEND_URL", "http://localhost:3000")  # Environment variable for production
@@ -331,3 +331,4 @@ if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     debug = os.getenv('FLASK_ENV', 'development') == 'development'
     app.run(debug=debug, port=port, host='0.0.0.0')
+
